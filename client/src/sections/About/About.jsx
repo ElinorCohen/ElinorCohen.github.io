@@ -1,4 +1,6 @@
+import { AboutWrapper } from "./About.style";
+
 function About() {
-    return;
-  }
-  export default About;
+  return <AboutWrapper id="About"></AboutWrapper>;
+}
+export default About;
