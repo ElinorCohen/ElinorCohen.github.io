@@ -1,4 +1,6 @@
+import { ServicesWrapper } from "./Services.style";
+
 function Services() {
-    return;
-  }
-  export default Services;
+  return <ServicesWrapper id="Services"></ServicesWrapper>;
+}
+export default Services;
