@@ -4,7 +4,7 @@ function Home() {
   return (
     <HomeWrapper id="homeWrapper">
       <Content></Content>
-      <div> </div>
+      <div>hi </div>
     </HomeWrapper>
   );
 }
