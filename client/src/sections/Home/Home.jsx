@@ -7,6 +7,7 @@ import {
   SubmitButton,
 } from "./Home.style";
 import Select from "react-select";
+import axios from "axios";
 
 function Home() {
   const [selectedInquiry, setSelectedInquiry] = useState("");
@@ -22,7 +23,7 @@ function Home() {
     setSelectedInquiry(selectedInquiry);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const { target } = event;
     const formData = new FormData(target);
@@ -30,6 +31,12 @@ function Home() {
     data.Inquiry = selectedInquiry ? selectedInquiry.label : "";
     console.log(data);
     console.log(target);
+    try {
+      const response = await axios.post("/api/send", { body: data });
+      console.log(response);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   const selectStylesForOptions = {
