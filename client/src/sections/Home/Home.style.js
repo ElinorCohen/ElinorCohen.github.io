@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HomeWrapper = styled.section`
   background-color: aqua;
   display: flex;
-  height: 500px;
+  height: 100vh;
   align-items: center;
   justify-content: center;
 `;
