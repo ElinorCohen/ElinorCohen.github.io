@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
   service: "Gmail",
@@ -10,13 +11,13 @@ const transporter = nodemailer.createTransport({
 
 module.exports.send = async function (req, res) {
   try {
-    const { data } = req.body;
-    console.log(data);
+    const { name, phoneNumber, Inquiry } = req.body;
+    console.log(name, phoneNumber, Inquiry);
     const mailOptions = {
       from: process.env.EMAIL,
-      to: email,
+      to: process.env.EMAIL_DES,
       subject: "פנייה חדשה",
-      text: `Your new password is: ${newPassword}`,
+      text: `יש לך פנייה חדשה מ${name} מספר טלפון ${phoneNumber} נושא הפניה הוא ${Inquiry}`,
       // html: `
       //   <p>Click the following button to change your password</p>
       //    <a href="${magicLink}" style="display: inline-block; background-color: #007BFF; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">Change Password</a>

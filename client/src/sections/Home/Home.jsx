@@ -30,9 +30,12 @@ function Home() {
     const data = Object.fromEntries(formData.entries());
     data.Inquiry = selectedInquiry ? selectedInquiry.label : "";
     console.log(data);
-    console.log(target);
     try {
-      const response = await axios.post("/api/send", { body: data });
+      const response = await axios.post("/api/send", {
+        name: data.name,
+        phoneNumber: data.phoneNumber,
+        Inquiry: data.Inquiry,
+      });
       console.log(response);
     } catch (err) {
       console.error(err);
@@ -49,7 +52,6 @@ function Home() {
       fontFamily: "Arial",
     }),
   };
-
   return (
     <HomeWrapper id="Home">
       <Content>
