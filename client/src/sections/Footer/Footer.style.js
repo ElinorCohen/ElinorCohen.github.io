@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FooterWrapper = styled.section`
   background-color: rgb(33, 33, 33);
   display: flex;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
